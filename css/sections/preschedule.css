@@ -1,0 +1,82 @@
+/* ============================================================
+   Pre-schedule CTA
+   ============================================================ */
+.preschedule {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  align-items: stretch;
+  min-height: 460px;
+  background: #e9dbff; /* soft pastel lavender background */
+  overflow: hidden;
+}
+.preschedule__panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+  padding: 64px var(--gutter);
+}
+.preschedule__eyebrow,
+.preschedule__sub {
+  font-family: var(--font-heading);
+  font-size: 24px;
+  font-weight: 500; /* slightly bold */
+  font-style: italic;
+  line-height: 1.4;
+  color: #7b47c4; /* slightly deeper purple for better readability and style */
+}
+.preschedule__title {
+  font-family: var(--font-heading);
+  font-size: 52px;
+  font-weight: 500; /* slightly bold */
+  line-height: 1.25;
+  color: #1b104c; /* dark navy */
+}
+.preschedule__btn.btn-split {
+  margin-top: 14px;
+  height: 48px;
+  align-self: flex-start;
+  border-radius: 4px;
+}
+.preschedule__btn .btn-split__icon {
+  background: #1b104c;
+  color: var(--white);
+  width: 48px;
+  border-radius: 4px 0 0 4px;
+}
+.preschedule__btn .btn-split__label {
+  background: transparent;
+  border: 1.5px solid #1b104c;
+  border-left: 0;
+  border-radius: 0 4px 4px 0;
+  color: #1b104c;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  padding: 0 20px;
+  transition: background 0.2s var(--ease), color 0.2s var(--ease);
+}
+.preschedule__btn:hover .btn-split__label {
+  background: #1b104c;
+  color: var(--white);
+}
+
+.preschedule__media {
+  position: relative;
+  min-height: 320px;
+}
+.preschedule__media::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(90deg, #e9dbff 0%, transparent 15%);
+  pointer-events: none;
+}
+.preschedule__media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
