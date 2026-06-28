@@ -1,0 +1,50 @@
+/* ============================================================
+   Shared split button  (icon tile + label)
+   ============================================================ */
+.btn-split {
+  display: inline-flex;
+  align-items: stretch;
+  height: 60px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+.btn-split__icon {
+  display: grid;
+  place-items: center;
+  width: 60px;
+  border-radius: 4px 0 0 4px;
+  background: var(--grad-ink);
+  color: var(--white);
+}
+.btn-split__icon svg { width: 20px; height: 20px; }
+.btn-split__label {
+  display: grid;
+  place-items: center;
+  padding: 0 24px;
+  border: 2px solid var(--navy);
+  border-left: 0;
+  border-radius: 0 4px 4px 0;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--ink);
+  white-space: nowrap;
+  transition: background 0.2s var(--ease), color 0.2s var(--ease);
+}
+.btn-split:hover .btn-split__label,
+.btn-split:focus-visible .btn-split__label {
+  background: var(--navy);
+  color: var(--white);
+}
+/* white-outline variant for dark backgrounds (hero submit) */
+.btn-split--solid .btn-split__icon { background: var(--white); color: var(--navy); }
+.btn-split--solid .btn-split__label {
+  border-color: var(--white);
+  color: var(--white);
+}
+.btn-split--solid:hover .btn-split__label,
+.btn-split--solid:focus-visible .btn-split__label {
+  background: var(--white);
+  color: var(--navy);
+}
