@@ -1,0 +1,80 @@
+/* ============================================================
+   Header  —  two states: hero (white) ↔ scrolled (dark)
+   ============================================================ */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--white);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+  transition: background 0.4s var(--ease), box-shadow 0.4s var(--ease);
+}
+.header__inner {
+  position: relative;
+  max-width: var(--container);
+  margin-inline: auto;
+  height: 100px;
+  padding-inline: var(--gutter);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: height 0.4s var(--ease);
+}
+.header__logo {
+  display: block;
+  align-self: stretch;
+}
+.header__logo img {
+  width: auto;
+  height: 154px;
+  /* logo overhangs the bar like the design (pedestal tab) */
+  margin-top: 3px;
+  filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.18));
+  transition: height 0.4s var(--ease), margin-top 0.4s var(--ease);
+}
+
+/* ---- Scrolled (dark) state ---- */
+.header.is-scrolled {
+  background: var(--grad-hero);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+}
+.header.is-scrolled .header__inner {
+  height: 72px;
+}
+.header.is-scrolled .header__logo img {
+  height: 64px;
+  margin-top: 0;
+}
+
+/* button flips to solid white with navy text on dark header */
+.header .btn-split { transition: none; }
+.header .btn-split__icon {
+  transition: background 0.4s var(--ease), color 0.4s var(--ease),
+              border-radius 0.4s var(--ease), width 0.4s var(--ease);
+}
+.header .btn-split__label {
+  transition: background 0.2s var(--ease), color 0.2s var(--ease),
+              border-color 0.4s var(--ease), border-radius 0.4s var(--ease);
+}
+.header.is-scrolled .btn-split {
+  flex-direction: row-reverse;
+  height: 48px;
+}
+.header.is-scrolled .btn-split__icon {
+  background: var(--white);
+  color: var(--navy);
+  width: 48px;
+  border-radius: 0 4px 4px 0;
+}
+.header.is-scrolled .btn-split__label {
+  background: var(--white);
+  border: 2px solid var(--white);
+  border-right: 0;
+  border-radius: 4px 0 0 4px;
+  color: var(--navy);
+}
+.header.is-scrolled .btn-split:hover .btn-split__label,
+.header.is-scrolled .btn-split:focus-visible .btn-split__label {
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--navy);
+}
