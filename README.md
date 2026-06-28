@@ -19,13 +19,41 @@ Then open `http://localhost:5500`.
 ## Structure
 
 ```
-index.html            # Semantic markup (header, hero, stats, schools, choose, CTA, exhibition, footer)
-css/style.css         # Design tokens + BEM components + responsive + reduced-motion
-js/main.js            # Collage auto-scroll, accessible form validation, reusable slider controller
+index.html              # Semantic markup (header, hero, stats, schools, choose, CTA, exhibition, footer)
+
+css/
+  style.css             # Entry — @imports the partials below, in cascade order
+  base/
+    tokens.css          # Design tokens (colors, gradients, fonts, layout, motion)
+    base.css            # Reset, base elements, utilities (.sr-only, .skip-link, .container)
+  components/
+    buttons.css         # Shared split button (.btn-split)
+    form.css            # Glassmorphism "Enquire" form (.enquire, .field)
+    slider.css          # Reusable scroll-snap slider (.slider, dots, arrows)
+  sections/
+    header.css          # Sticky header, hero ↔ scrolled states
+    hero.css            # Hero layout, venue badge, photo collage
+    stats.css           # Laurel-wreath stat blocks
+    schools.css         # Logo marquees
+    choose.css          # "Choose the school" cards
+    preschedule.css     # Pre-schedule CTA
+    exhibition.css      # Exhibition highlights
+    footer.css          # Footer
+  responsive.css        # Reduced-motion + all media queries (loaded last)
+
+js/
+  main.js               # ES module entry — boots each feature on DOM ready
+  modules/
+    utils.js            # Shared helpers (reduceMotion query, debounce)
+    collage.js          # Hero collage auto-scroll + pause toggle
+    form.js             # Accessible form validation
+    slider.js           # Reusable slider controller (dots + arrows)
+    header.js           # Header hero ↔ scrolled state toggle
+
 assets/
-  images/             # Hero collage photos, school cards, CTA photo, logos (exported & optimized from Figma)
-  logos/              # Participating-school logo strips (marquee)
-  icons/              # Exhibition feature icons (SVG, exported from Figma)
+  images/               # Hero collage photos, school cards, CTA photo, logos (exported & optimized from Figma)
+  logos/                # Participating-school logo strips (marquee)
+  icons/                # Exhibition feature icons (SVG, exported from Figma)
 ```
 
 ## Sections & interactions
