@@ -1,0 +1,100 @@
+/* ============================================================
+   Footer
+   ============================================================ */
+.footer {
+  background: linear-gradient(90deg, #3d1b7c 0%, #150935 100%); /* rich horizontal purple-navy gradient */
+  color: var(--white);
+}
+.footer__main { padding: 48px var(--gutter) 48px; }
+.footer__inner {
+  max-width: var(--container);
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.footer__logo { flex: none; }
+.footer__logo img {
+  height: 64px;
+  width: auto;
+}
+.footer__cols {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px 40px;
+  flex: 1;
+  justify-content: space-between;
+}
+.footer__col {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  flex: 1 1 200px;
+  max-width: 290px;
+}
+.footer__icon {
+  flex: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  background: #e9dbff; /* light lavender square box */
+  display: grid;
+  place-items: center;
+  color: #3d1b7c; /* dark purple icon color */
+}
+.footer__icon svg {
+  width: 18px;
+  height: 18px;
+}
+.footer__label {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.4;
+  margin-bottom: 6px;
+  color: var(--white);
+}
+.footer__text {
+  font-style: normal;
+  font-size: 12px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.8);
+}
+.footer__phones { display: flex; flex-direction: column; gap: 2px; }
+.footer__phones a { font-size: 12px; font-weight: 600; color: rgba(255, 255, 255, 0.8); }
+.footer__phones a:hover { text-decoration: underline; color: var(--white); }
+.footer__col--social { flex-direction: column; flex-basis: 150px; max-width: 180px; }
+.footer__social { display: flex; gap: 10px; margin-top: 6px; }
+.footer__social a {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: #e9dbff; /* matching lavender square for social links */
+  display: grid;
+  place-items: center;
+  color: #3d1b7c;
+  transition: transform 0.2s var(--ease), background 0.2s var(--ease);
+}
+.footer__social a svg {
+  width: 24px;
+  height: 24px;
+}
+.footer__social a:hover,
+.footer__social a:focus-visible {
+  background: var(--white);
+  transform: translateY(-2px);
+}
+.footer__bottom {
+  background: var(--white); /* white copyright background */
+  padding: 16px var(--gutter);
+  border-top: none;
+}
+.footer__copy {
+  text-align: center;
+  font-family: var(--font-heading);
+  font-size: 12px;
+  font-weight: 500;
+  color: #1b104c; /* dark purple text color */
+}
