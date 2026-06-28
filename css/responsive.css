@@ -1,0 +1,98 @@
+/* ============================================================
+   Reduced motion
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .collage__track { animation: none !important; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* ============================================================
+   Responsive — Hero / Header
+   ============================================================ */
+@media (max-width: 1280px) {
+  :root { --gutter: 56px; }
+  .hero__inner { gap: 28px; }
+}
+
+@media (max-width: 1024px) {
+  .hero__inner {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    min-height: 0;
+    padding-block: 56px;
+    row-gap: 36px;
+  }
+  .hero__intro { order: 1; align-items: center; text-align: center; max-width: 600px; }
+  .hero__headline { align-items: center; }
+  .venue { margin-inline: auto; }
+  .enquire { order: 2; max-width: 460px; }
+  .collage { order: 3; width: 100%; height: 300px; }
+}
+
+@media (max-width: 720px) {
+  :root { --gutter: 20px; }
+  .header__inner { height: 76px; }
+  .header__logo img { height: 116px; }
+  .header.is-scrolled .header__inner { height: 60px; }
+  .header.is-scrolled .header__logo img { height: 50px; }
+  .btn-split { height: 48px; }
+  .btn-split__icon { width: 48px; }
+  .btn-split__label { padding: 0 14px; font-size: 12px; }
+  .venue { flex-direction: column; gap: 8px; border-radius: 28px; text-align: center; }
+  .venue__divider { width: 60%; height: 1.5px; }
+  .enquire__form { padding: 18px; }
+  .enquire__title { font-size: 26px; }
+  .field__label { font-size: 16px; }
+}
+
+/* ---- Sections: tablet ---- */
+@media (max-width: 1024px) {
+  .choose__track { grid-template-columns: repeat(2, 1fr); }
+  .stats__list { grid-template-columns: repeat(2, 1fr); max-width: 680px; }
+  .preschedule { grid-template-columns: 1fr; }
+  .preschedule__media { min-height: 300px; }
+  .preschedule__panel { padding-block: 48px; }
+  .preschedule__title { font-size: 44px; line-height: 1.2; }
+  .preschedule__eyebrow, .preschedule__sub { font-size: 26px; }
+  .card-feature { flex: 0 0 calc((100% - 16px) / 2); }
+}
+
+/* ---- Sections: mobile (sliders engage) ---- */
+@media (max-width: 640px) {
+  .choose__track {
+    display: flex;
+    grid-template-columns: none;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 16px;
+    scrollbar-width: none;
+    padding-block: 4px;
+  }
+  .choose__track::-webkit-scrollbar { display: none; }
+  .choose .card-school { flex: 0 0 82%; scroll-snap-align: center; }
+  .card-feature { flex: 0 0 85%; }
+  .stats__list { grid-template-columns: 1fr; max-width: 340px; }
+}
+
+/* ---- Typography: phones (down-scale the fixed desktop sizes) ---- */
+@media (max-width: 720px) {
+  .hero__headline-top { font-size: 34px; white-space: normal; }
+  .hero__headline-sub { font-size: 21px; white-space: normal; }
+  .venue__line--strong { font-size: 21px; }
+  .venue__line:not(.venue__line--strong) { font-size: 15px; }
+  .choose__title,
+  .exhibition__title { font-size: 30px; }
+  .preschedule__title { font-size: 36px; }
+  .preschedule__eyebrow,
+  .preschedule__sub { font-size: 22px; }
+  .card-school__title { font-size: 19px; }
+  .card-school__desc { font-size: 16px; }
+  .card-feature__title { font-size: 21px; }
+  .card-feature__desc { font-size: 17px; }
+  .stat__text { font-size: 24px; }
+}
