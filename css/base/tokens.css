@@ -1,0 +1,30 @@
+/* ============================================================
+   Design tokens — colors, gradients, fonts, layout, motion
+   ============================================================ */
+:root {
+  --navy: #000e38;
+  --purple: #3f186a;
+  --purple-light: #4a1f7d;
+  --purple-bright: #5a2790;
+  --ink: #030e3b;
+  --gold-1: #ffcc81;
+  --gold-2: #e9c79f;
+  --white: #ffffff;
+  --text-muted: #5b5b6b;
+
+  --grad-hero: linear-gradient(96deg, #000e38 0%, #1d1048 34%, #3f186a 62%, var(--purple-bright) 100%);
+  --grad-gold: linear-gradient(180deg, var(--gold-1) 0%, var(--gold-2) 100%);
+  --grad-gold-pill: linear-gradient(180deg, var(--gold-1) 30%, var(--gold-2) 100%);
+  --grad-ink: linear-gradient(0deg, var(--navy) 0%, var(--purple) 100%);
+
+  --font-body: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-display: "Archivo", var(--font-body);
+  --font-heading: "Poppins", var(--font-body);
+
+  --container: 1920px;
+  --gutter: 100px;
+  --radius: 12px;
+
+  --shadow-card: 0 14px 40px rgba(20, 8, 45, 0.12);
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+}
