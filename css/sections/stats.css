@@ -1,0 +1,50 @@
+/* ============================================================
+   Stats bar
+   ============================================================ */
+.stats {
+  background: var(--white);
+  padding: 64px var(--gutter) 32px;
+}
+.stats__list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  justify-items: center;
+  gap: 16px 8px;
+  max-width: 1400px;
+  margin-inline: auto;
+}
+.stat {
+  position: relative;
+  width: 100%;
+  max-width: 260px;
+  min-height: 130px;
+  display: grid;
+  place-items: center;
+  padding-inline: 50px;
+}
+.stat__wreath {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 72px;
+  display: block;
+}
+.stat__wreath img { height: 100%; width: auto; }
+.stat__wreath--l { left: 0; }
+.stat__wreath--r { right: 0; transform: scaleX(-1); }
+.stat__text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  line-height: 1.2;
+  font-size: 22px;
+  background: linear-gradient(90deg, #010e39 0%, #0344a2 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: #010e39;                  /* fallback */
+  -webkit-text-fill-color: transparent;
+}
+.stat__big { font-weight: 700; }
+.stat__lead { font-weight: 400; }
